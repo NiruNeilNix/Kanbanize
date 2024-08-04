@@ -1,0 +1,82 @@
+.view-card-wrapper {
+    background-color: #2B2C37;
+    overflow-y: hidden; 
+    overflow-x: hidden; 
+    padding: 25px;
+
+        .head-title {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        span {
+            color: rgb(61, 124, 241);;
+        }
+
+        .view-detail {
+            color: #fff;
+        }
+
+        .almost-due {
+            color: rgb(192, 121, 14);
+            font-weight: bold;
+          }
+          
+          .overdue {
+            color: red;
+            font-weight: bold;
+          }
+          
+          .due-today {
+            color: rgb(9, 146, 9);
+            font-weight: bold;
+          }
+          
+          .in-progress {
+            color:rgb(27, 179, 141);
+            font-weight: bold;
+          }
+          
+          .complete {
+            color: rgb(61, 124, 241);
+            font-weight: bold;
+          }
+
+          .bg-color {
+            background-color: #2B2C37;
+            border: none;
+            cursor: pointer;  
+
+                .material-symbols-outlined {
+                  font-variation-settings:
+                  'FILL' 0,
+                  'wght' 400,
+                  'GRAD' 0,
+                  'opsz' 24;
+                  color: #fff;
+                  font-size: 30px;
+                  background-color: #2B2C37;
+                }
+          }
+
+          .detail-gap {
+            margin-top: 3px;
+          }
+          .detail-scroll {
+              margin: 4px, 4px;
+              padding: 4px;
+              width: 540px;
+              height: 110px;
+              overflow-x: hidden;
+              overflow-y: auto;
+              text-align: justify;
+              color: #2B2C37;
+              background-color: #fff;
+              white-space: pre-wrap;
+          }
+          
+}

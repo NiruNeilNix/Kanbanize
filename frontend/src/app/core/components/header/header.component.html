@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <li class ="app-name has-gradient-text">KANBANIZE</li>
+    <li class="menu-items">
+      @if(isLoggedIn()){
+      <a class="signout" (click)="signOut()">Sign out</a>
+      } @else {
+      <a [routerLinkActive]="'active'" routerLink="/login">Login/Register</a>
+      }
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,40 @@
+:host {
+    display: block;
+    padding: 24px;
+    background-color: #2b2c37;
+    color: #fff;
+        // Modal: Add board/Add/Close //
+        .add-btn {
+            color: #000;
+            border-radius: 10px;
+            background-color: #57D19C;
+            transition: transform .2s;
+        }
+
+        .add-btn:hover {
+            color: #000;
+            transform: scale(0.9);
+        }
+
+        .close-btn {
+            color: #000;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+
+        .close-btn:hover {
+            color: #000;
+            transform: scale(0.9);
+        }
+
+        input[type=text], textarea {
+            color: #fff;
+            padding: 12px 20px;
+            margin: 8px 0;
+            background-color: #20212C;
+            box-sizing: border-box;
+            border: lightgrey solid 1px;
+            border-radius: 1px;
+        }
+        
+}

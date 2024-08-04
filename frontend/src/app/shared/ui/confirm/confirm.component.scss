@@ -1,0 +1,33 @@
+@use "variables.scss" as v;
+.kb-dialog {
+  width: 340px;
+  padding: 16px;
+  background-color: #2B2C37;
+
+    .kb-dialog__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid v.$border-color;
+
+          .kb-dialog__title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+            color: #fff;
+          }
+
+          .del-btn {
+            color: #f55a4e;
+          }
+
+          .close-x {
+            color: #fff;
+          }
+          
+    }
+    .kb-dialog__content {
+      padding: 16px 0 24px;
+      color: #fff;
+    }
+}

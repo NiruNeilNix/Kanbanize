@@ -1,0 +1,67 @@
+<div class="wrapper"> 
+<div class="list-wrapper">
+  <app-list (boardSelected)="selectBoard($event)"></app-list>
+</div>
+
+<div class="detail-wrapper">
+  <div cdkDropListGroup cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="onSwimlaneChange($event)" class="swimlanes-wrapper">
+    @for(swimlane of board()?.swimlanes; track swimlane) {
+    <div class="swimlane" cdkDrag>
+      <div class="swimlane-header" cdkDragHandle>
+        <h2 class="truncate">{{ swimlane.name }}</h2>
+        <div class="menu">
+          <button class="swimlane-button" [matMenuTriggerFor]="menu">☰</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="editSwimlane(swimlane)">Edit Swimlane</button>
+              <button mat-menu-item (click)="addOrEditCard(swimlane)">Add Task</button>
+            </mat-menu>
+        </div>
+    </div>
+<div class="swimlane-inner">
+  <div class="swimlane-inner__dragzone" cdkDropList cdkDropListOrientation="vertical" [cdkDropListData]="swimlane.cards" (cdkDropListDropped)="onCardChange($event, swimlane)">
+    @for(card of swimlane.cards; track card) {
+    <button class="swimlane__card" (click)="viewCard(swimlane, card)" cdkDrag>
+      <div class="card-name">{{ card.name }}</div><br>
+      <div class="frame">           
+        <div class="frame-date-status">
+          <p [ngClass]="{
+                  'overdue': getCardStatus(card.dueDate, card.complete) === 'OVERDUE',
+                  'almost-due': getCardStatus(card.dueDate, card.complete) === 'ALMOST DUE',
+                  'due-today': getCardStatus(card.dueDate, card.complete) === 'DUE TODAY',
+                  'in-progress': getCardStatus(card.dueDate, card.complete) === 'PENDING',
+                  'complete': getCardStatus(card.dueDate, card.complete) === 'COMPLETED'
+                  }">{{ getCardStatus(card.dueDate, card.complete) }}
+            </p>
+            <p class="due-date">Due Date: {{ card.dueDate | date:'yyyy-MM-dd' }}</p>
+        </div>
+              <div class="frame-check-box">
+                <input type="checkbox" [checked]="card.complete" (click)="$event.stopPropagation()" (change)="toggleCardCompletion(card)">
+              </div>
+      </div>
+    </button>}
+  </div>
+</div>
+</div>
+  }
+<div class="swimlane">
+    <div class="swimlane-inner">
+      <h2>New Swimlane</h2>
+      <form [formGroup]="swimlaneForm">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Ex. Todo" maxlength="21"/>
+
+          @if (!swimlaneForm.controls.name.hasError('required')) {
+          <mat-error>Please enter a valid name</mat-error>
+          } </mat-form-field>
+          <br />
+        <button (click)="addSwimlane()" color="primary">
+          Add swimlane
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+

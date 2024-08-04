@@ -1,0 +1,67 @@
+:host {
+  display: block;
+  padding: 24px 24px 32px;
+  background-color: #2b2c37;
+  color: #fff;
+
+  .add-task {
+    color: #000;
+    border-radius: 10px;
+    background-color: #57D19C;
+    transition: transform .2s;
+  }
+
+  .add-task:hover {
+    color: #000;
+    transform: scale(0.9);
+  }
+
+  .task-close {
+    color: #000;
+    border-radius: 10px;
+    transition: transform .2s;
+  }
+
+  .task-close:hover {
+    color: #000;
+    transform: scale(0.9);
+  }
+
+  .del-task {
+    color: #000;
+    background-color: #d32f2f;
+    border-radius: 10px;
+    transition: transform .2s;
+  }
+
+  .del-task:hover {
+    color: #000;
+    background-color: #d32f2f;
+    transform: scale(0.9);
+  }
+
+
+  input[type=text], textarea {
+    color: #fff;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: lightgrey solid 1px;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field-wrapper {
+  width: 100%;
+}
+
+.mat-form-field-infix {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}

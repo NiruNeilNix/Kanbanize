@@ -1,0 +1,23 @@
+<form [formGroup]="swimlaneForm">
+  <h1>Edit swimlane</h1>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" placeholder="Ex. To-Do" maxlength="21"/>
+
+    @if (!swimlaneForm.controls.name.hasError('required')) {
+    <mat-error>Please enter a valid name</mat-error>
+    }
+  </mat-form-field>
+
+  <div class="button-group">
+    <button class="save-btn" (click)="updateSwimlane()" mat-flat-button color="primary">
+      Save
+    </button>
+    <button class="del-btn" (click)="deleteSwimlane()" mat-flat-button color="warn">
+      Delete
+    </button>
+    <button class="close-btn" (click)="closeDialog()" mat-flat-button color="secondary">
+      Close
+    </button>
+  </div>
+</form>

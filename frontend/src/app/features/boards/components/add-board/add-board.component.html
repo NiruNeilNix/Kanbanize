@@ -1,0 +1,20 @@
+
+<form [formGroup]="addBoardForm" class="add-modal">
+  <h1>{{ data.board?.id ? "Edit" : "Add" }} Board</h1>
+  <mat-form-field class="form-field">
+    <!-- <mat-label>Enter a board name</mat-label> -->
+    <input type="text"  formControlName="name" placeholder="Enter a board name" maxlength="21"/>
+
+    <!-- @if (!addBoardForm.controls.name.hasError('required')) {
+    <mat-error>Please enter a valid name</mat-error>} -->
+  </mat-form-field>
+
+  <div class="button-group">
+    <button class="add-btn" (click)="createOrEditBoard()" mat-flat-button color="primary">
+      {{ data.board?.id ? "Save" : "Add" }}
+    </button>
+    <button class="close-btn" (click)="closeDialog()" mat-flat-button color="secondary">
+      Close
+    </button>
+  </div>
+</form>

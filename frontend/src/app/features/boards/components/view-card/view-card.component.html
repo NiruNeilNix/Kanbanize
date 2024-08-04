@@ -1,0 +1,42 @@
+<div *ngIf="data.card">
+<div class="view-card-wrapper">
+
+    <div class="head-title">
+        <div class="title">
+            <h1>Card Details</h1>
+        </div>
+        
+        <div class="col-edit">
+            <button class="bg-color" (click)="addOrEditCard(data.swimlane, data.card)">
+                <span class="material-symbols-outlined">edit_note</span>
+            </button>
+        </div>
+    </div>
+
+
+        <div class="view-detail">
+            <strong >Task:</strong> 
+                {{ data.card.name }}
+        </div>
+        <div class="view-detail">       
+            <strong>Due Date:</strong> 
+                <span class="date-color"> {{ data.card.dueDate | date:'yyyy-MM-dd' }}</span>
+        </div>
+        <div>
+            <p [ngClass]="{
+                'overdue': getCardStatus(data.card.dueDate, data.card.complete) === 'OVERDUE',
+                'almost-due': getCardStatus(data.card.dueDate, data.card.complete) === 'ALMOST DUE',
+                'due-today': getCardStatus(data.card.dueDate, data.card.complete) === 'DUE TODAY',
+                'in-progress': getCardStatus(data.card.dueDate, data.card.complete) === 'PENDING',
+                'complete': getCardStatus(data.card.dueDate, data.card.complete) === 'COMPLETED'
+                }"><strong class="view-detail">Status:</strong> {{ getCardStatus(data.card.dueDate, data.card.complete) }}
+            </p>
+        </div>
+        <div class="view-detail">
+                <strong>Content Detail</strong>
+                <div class="detail-gap">
+                <div class="detail-scroll" style="white-space: pre-wrap;">{{ data.card.content }}</div>  
+                </div> 
+        </div>
+</div>
+

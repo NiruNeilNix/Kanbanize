@@ -1,0 +1,54 @@
+:host {
+  display: block;
+  padding: 24px;
+  background-color: #2b2c37;
+  color: #fff;
+
+      .save-btn {
+        color: #000;
+        background-color: #57D19C;
+        border-radius: 10px;
+        transition: transform .2s;
+      }
+
+      .save-btn:hover {
+        color: #000;
+        background-color: #57D19C;
+        border-radius: 10px;
+        transform: scale(0.9);
+      }
+
+      .del-btn {
+        color: #000;
+        background-color: #d32f2f;
+        border-radius: 10px;
+        transition: transform .2s;
+      }
+
+      .del-btn:hover {
+        color: #000;
+        background-color: #d32f2f;
+        transform: scale(0.9);
+      }
+      
+      .close-btn {
+        color: #000;
+        border-radius: 10px;
+        transition: transform .2s;
+      }
+
+      .close-btn:hover {
+        color: #000;
+        transform: scale(0.9);
+      }
+
+      input[type=text], textarea {
+        color: #fff;
+        padding: 12px 20px;
+        margin: 8px 0;
+        background-color: #20212C;
+        box-sizing: border-box;
+        border: lightgrey solid 1px;
+        border-radius: 1px;
+    }
+}

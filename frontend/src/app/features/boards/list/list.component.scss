@@ -1,0 +1,94 @@
+.board-list-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden; 
+  overflow-x: hidden;
+  position: sticky;
+}
+
+.list-hearder-wrapper {
+  width: 100%;
+  background-color: #2B2C37;
+  
+      .board-name {
+          color: white;
+          font-size: 26px;
+          text-align: center;
+          text-wrap: none;
+          white-space: nowrap;
+          padding: 1px 100px 1px 25px;
+          margin: 15px 0 25px 0;
+      }
+
+      .matcard {
+          background-color: #2B2C37;
+      }
+
+      .board-inner {
+          display: flex;
+          font-size: 16px;
+          text-align: center;
+          text-wrap: none;
+          white-space: nowrap;
+          padding: 1px 100px 1px 25px;
+          margin-bottom: 0;
+          background-color: #2B2C37;
+            .edit-del-btn {
+              color: #ffffff;
+              background-color: #2B2C37;
+              border: none;
+            }   
+      }
+    
+      .board-inner:hover{
+          cursor: pointer;
+          background-color: #12d1b1;
+          border-radius: 0 15px 15px 0;
+          color: #fff;
+            .edit-del-btn {
+              color: #fff;
+              background-color: #12d1b1;
+            }
+      }
+
+    .board-inner {
+      transition: transform 0.5s ease;
+    }
+
+    .board-inner:hover {
+      transform: translateX(15px);
+    }
+
+    .plus-button {
+      margin-top: 25px;
+      text-align: center;
+    }
+    
+    .board-header {
+      margin-left: 25px;
+    }
+
+    .plus {
+      font-size: 16px;
+      border-radius: 5px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+    
+    .board {
+      text-decoration: none;
+      color: #ffffff;
+      
+    }
+
+    .name-plus {
+      display: flex;
+      margin-left: 25px;
+    }
+    .edit-del-btn {
+      color: #fff;
+    }
+}
+
+

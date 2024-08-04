@@ -1,0 +1,43 @@
+<form [formGroup]="addCardForm" class="card-modal">
+  
+  <h1>{{ data.card?.id ? "Edit" : "Add" }} Task</h1>
+  
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" placeholder="Ex. My card"/>
+  @if (!addCardForm.controls.name.hasError('required')) {
+    <mat-error>Please enter a valid name</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>
+    Content Detail
+    </mat-label>
+    <textarea matInput formControlName="content" placeholder="Enter content detail here."></textarea>
+  </mat-form-field>
+  
+  <!-- date picker -->
+  <mat-form-field>
+    <mat-label>Due Date</mat-label>
+    <input matInput [matDatepicker]="dueDatePicker" formControlName="dueDate" placeholder="Select due date">
+    <mat-datepicker-toggle matSuffix [for]="dueDatePicker" class="date-toggle"></mat-datepicker-toggle>
+    <mat-datepicker #dueDatePicker></mat-datepicker>
+  </mat-form-field>
+  <!-- date picker -->
+  
+  <div class="button-group">
+    <button class="add-task" (click)="createOrEditCard()" mat-flat-button color="primary">
+      {{ data.card?.id ? "Save" : "Add" }}
+    </button>
+    @if(data.card?.id){
+    <button class="del-task" (click)="deleteCard()" mat-flat-button color="warn">
+      Delete
+    </button>
+    }
+    <button class="task-close" (click)="closeDialog()" mat-flat-button color="secondary">
+      Close
+    </button>
+  </div>
+</form>
+
